@@ -38,11 +38,17 @@ It then generates personalized emails for each contact by replacing placeholders
 
 After sending the emails, the script generates an output file containing all personalized emails, providing a record of the outreach effort and enabling us to track our networking activities effectively.
 
+<img src="assets/mail.png">
+
+
 ## Challenges we ran into
 
 One of the most significant challenges I faced was implementing the email-sending functionality in Matlab. Gmail has strict authentication requirements, especially for applications attempting to access an account via SMTP. 
 
 Authentication was failing multiple times for various reasons, and this entailed creating app passwords and enabling multi-factor authentication.
+
+<img src="assets/fix.png">
+
 
 ## Accomplishments that we're proud of
 
