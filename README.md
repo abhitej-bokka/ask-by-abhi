@@ -11,6 +11,8 @@ This is the power of asking, the essence of this project.
 
 [<img src="assets/screenshot.jpeg">](https://www.loom.com/share/f1ba0bdca9db4d968335e99f2852e647?sid=0a3a43be-ae7d-477a-926c-2ead040aa1b3)
 
+Click on the picture - it's a video!
+
 
 ## The End-to-End process
 
