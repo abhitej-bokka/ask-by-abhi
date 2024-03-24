@@ -1,0 +1,78 @@
+% Define the company name for this batch of emails
+companyFile = 'yahoo.txt';
+fileID = fopen(companyFile, 'r');
+
+companyName = fgetl(fileID);
+link = fgetl(fileID);
+
+fclose(fileID);
+
+% Grab email & password.
+credentialsFile = 'credentials.txt';
+fileID = fopen(credentialsFile, 'r');
+
+email = fgetl(fileID);
+password = fgetl(fileID);
+
+fclose(fileID);
+
+% Set up Gmail SMTP service.
+setpref('Internet','SMTP_Server','smtp.gmail.com');
+setpref('Internet','E_mail',mail);
+setpref('Internet','SMTP_Username',mail);
+setpref('Internet','SMTP_Password',password);
+
+% Gmail server.
+props = java.lang.System.getProperties;
+props.setProperty('mail.smtp.auth','true');
+props.setProperty('mail.smtp.socketFactory.class', ...
+                  'javax.net.ssl.SSLSocketFactory');
+props.setProperty('mail.smtp.socketFactory.port','465');
+
+% Specify file names
+namesFile = 'Names.txt';
+templateFile = 'TemplateEmail.txt';
+outputFile = 'Output.txt';
+
+% Read the names and template content
+namesContent = fileread(namesFile);
+templateContent = fileread(templateFile);
+
+% Split the content by new lines to get each name
+namesLines = splitlines(namesContent);
+
+% Open the output file for writing
+fid = fopen(outputFile, 'w');
+
+% Process each name line
+for i = 1:length(namesLines)
+    nameLine = strtrim(namesLines{i});
+    % Split the name into parts and check if it seems valid
+    nameParts = split(nameLine);
+    if length(nameParts) >= 2
+        % Construct the email using the first and last name
+        firstName = nameParts{1};
+        lastName = nameParts{2};
+        email = strcat(lower(firstName), '.', lower(lastName), '@', companyName, '.com');
+        header = strcat('Rutgers Student Interested in ', companyName, 'Opportunity');
+        attachmentFilePath = '/Abhitej_Bokka_Resume.pdf'; 
+
+        % Replace placeholders in the template
+        personalizedEmail = strrep(templateContent, '{firstName}', firstName);
+        personalizedEmail = strrep(personalizedEmail, '{lastName}', lastName);
+        personalizedEmail = strrep(personalizedEmail, '{companyName}', companyName);
+        personalizedEmail = strrep(personalizedEmail, '{email}', email);
+        personalizedEmail = replace(personalizedEmail, '{link}', link);
+
+        sendmail(email, header, personalizedEmail, attachmentFilePath);
+
+        
+        % Write the personalized email to the output file
+        fprintf(fid, '%s\n', personalizedEmail);
+    end
+end
+
+% Close the output file
+fclose(fid);
+
+disp(['Personalized emails have been saved to ', outputFile]);
