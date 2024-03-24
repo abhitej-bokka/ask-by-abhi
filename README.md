@@ -11,6 +11,8 @@ This is the power of asking, the essence of this project.
 
 [<img src="assets/screenshot.jpeg">](https://www.loom.com/share/f1ba0bdca9db4d968335e99f2852e647?sid=0a3a43be-ae7d-477a-926c-2ead040aa1b3)
 
+Click on the picture - it's a video!
+
 
 ## The End-to-End process
 
@@ -18,11 +20,17 @@ There are two parts to making this work.
 
 First, we collect people we want to email from LinkedIn, and second, we send emails based on their names and companies.
 
-The users first search for engineering managers hiring for their desired role on LinkedIn. They then copy all the contents of the LinkedIn search and add them to a text file. This file, full of information, is pre-processed using SpaCy, an open-source library for advanced natural language processing. 
+The users first search for engineering managers hiring for their desired role on LinkedIn. They then copy all the contents of the LinkedIn search and add them to a text file. 
+
+<img src="assets/linkedin.png">
+
+This file, full of information, is pre-processed using SpaCy, an open-source library for advanced natural language processing. 
 
 A natural language process (NLP) called Named Entity Recognition is used, which classifies pieces of text into pre-defined categories. It then extracts all the entities (pieces of text) labeled as people and uses additional regex to clean up any extraneous information.
 
 Now, with a list of names, the MatLab code works on splicing together and sending emails with the full name and company name like so: {firstname}.{lastname}@{companyname}.com
+
+<img src="assets/template.png">
 
 It’s configured with MATLAB's preferences to use Gmail's Simple Mail Transfer Protocol (SMTP) server for email sending, including setting up SSL for secure communication. 
 
