@@ -58,7 +58,7 @@ This was my first time using Matlab outside of math classes, and I’m very prou
 
 I learned how to use NLP effectively and gained a deeper understanding of SMTP. Being able to code in Python and Matlab gave me the flexibility to take a step back and see how the two automations meshed together and where each language’s capabilities shined.
 
-## What's next for Ask By Abhi
+## What's next for Ask by Abhi
 
 Eventually, I can scale this service to automate emails without going to LinkedIn, and it can run as a background service, given simply the job link. It will be game-changing to the internship grind and ensure students can land their dream internship.
 
