@@ -52,7 +52,7 @@ Authentication was failing multiple times for various reasons, and this entailed
 
 ## Accomplishments that we're proud of
 
-This was my first time using Matlab outside of math classes, and I’m very proud to have used it unconventionally. As much as I struggled with understanding how SMTP works, reading online documentation and forums helped me understand my problems. This ability to innovate and overcome came through; I’m glad it worked out.
+This was my first time using Matlab outside of math classes, and I’m proud to have used it unconventionally. As much as I struggled with understanding how SMTP works, reading online documentation and forums helped me understand my problems. This ability to innovate and overcome came through; I’m glad it worked out.
 
 ## What we learned
 
