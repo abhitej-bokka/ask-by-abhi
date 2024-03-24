@@ -9,7 +9,7 @@ This project stems from the belief that closed mouths aren't fed. Why wait for o
 
 This is the power of asking, the essence of this project.
 
-[<img src="assets/screenshot.png">](https://www.loom.com/share/f1ba0bdca9db4d968335e99f2852e647?sid=0a3a43be-ae7d-477a-926c-2ead040aa1b3)
+[<img src="assets/screenshot.jpg">](https://www.loom.com/share/f1ba0bdca9db4d968335e99f2852e647?sid=0a3a43be-ae7d-477a-926c-2ead040aa1b3)
 
 
 ## The End-to-End process
